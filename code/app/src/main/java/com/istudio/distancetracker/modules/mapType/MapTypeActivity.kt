@@ -1,4 +1,4 @@
-package com.istudio.distancetracker.mapType
+package com.istudio.distancetracker.modules.mapType
 
 import android.app.Dialog
 import android.graphics.Color

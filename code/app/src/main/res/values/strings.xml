@@ -15,4 +15,5 @@
     <string name="str_terrain">Terrain</string>
     <string name="str_none">None</string>
     <string name="str_choose">Choose</string>
+    <string name="str_map_view_3d">Map view 3D</string>
 </resources>

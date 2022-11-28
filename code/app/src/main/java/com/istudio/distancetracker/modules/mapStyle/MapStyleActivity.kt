@@ -1,4 +1,4 @@
-package com.istudio.distancetracker.mapStyle
+package com.istudio.distancetracker.modules.mapStyle
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
