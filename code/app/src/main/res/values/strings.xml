@@ -20,4 +20,7 @@
     <string name="strAnimateCamera">Animate Camera</string>
     <string name="animate_camera">Animate Camera</string>
     <string name="map_co_ordinates">Map Tap Co-ordinates</string>
+    <string name="str_select_demo">Select Demo</string>
+    <string name="str_markers_demo">Markers Demo</string>
+    <string name="delete_marker">Delete Marker</string>
 </resources>

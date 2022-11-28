@@ -35,7 +35,7 @@
         <activity
             android:name=".SelectionActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps">
+            android:label="@string/str_select_demo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -72,6 +72,11 @@
             android:name=".modules.mapTapCoOrdinates.MapTapCoOrdinatesActivity"
             android:exported="true"
             android:label="@string/map_co_ordinates"/>
+
+        <activity
+            android:name=".modules.mapMarkers.MapMarkersActivity"
+            android:exported="true"
+            android:label="@string/str_markers_demo"/>
 
     </application>
 

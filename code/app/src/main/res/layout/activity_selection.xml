@@ -43,4 +43,10 @@
         android:layout_height="wrap_content"
         android:text="@string/map_co_ordinates" />
 
+    <Button
+        android:id="@+id/btnMapMarkersId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_markers_demo" />
+
 </LinearLayout>
