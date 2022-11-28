@@ -30,6 +30,8 @@ class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
+    private lateinit var markerPosition : Marker
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
@@ -52,8 +54,6 @@ class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
-
-    private lateinit var markerPosition : Marker
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
