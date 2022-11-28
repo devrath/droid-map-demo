@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="@string/animate_camera" />
 
+    <Button
+        android:id="@+id/btnMapTapCoOrdinatesId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/map_co_ordinates" />
+
 </LinearLayout>

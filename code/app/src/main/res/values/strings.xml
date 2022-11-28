@@ -19,4 +19,5 @@
     <string name="str_boundaries">Map Boundaries</string>
     <string name="strAnimateCamera">Animate Camera</string>
     <string name="animate_camera">Animate Camera</string>
+    <string name="map_co_ordinates">Map Tap Co-ordinates</string>
 </resources>

@@ -7,6 +7,7 @@ import com.istudio.distancetracker.databinding.ActivitySelectionBinding
 import com.istudio.distancetracker.modules.animateCamera.AnimateCameraActivity
 import com.istudio.distancetracker.modules.mapBoundaries.MapBoundariesActivity
 import com.istudio.distancetracker.modules.mapStyle.MapStyleActivity
+import com.istudio.distancetracker.modules.mapTapCoOrdinates.MapTapCoOrdinatesActivity
 import com.istudio.distancetracker.modules.mapType.MapTypeActivity
 import com.istudio.distancetracker.modules.mapView3d.MapView3dActivity
 import com.istudio.distancetracker.utils.openActivity
@@ -28,5 +29,6 @@ class SelectionActivity : AppCompatActivity() {
         binding.btnMapView3dId.setOnClickListener { openActivity(MapView3dActivity::class.java) }
         binding.btnMapBoundariesId.setOnClickListener { openActivity(MapBoundariesActivity::class.java) }
         binding.btnMapAnimateCameraId.setOnClickListener { openActivity(AnimateCameraActivity::class.java) }
+        binding.btnMapTapCoOrdinatesId.setOnClickListener { openActivity(MapTapCoOrdinatesActivity::class.java) }
     }
 }

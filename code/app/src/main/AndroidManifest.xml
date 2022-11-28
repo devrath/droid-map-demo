@@ -68,6 +68,11 @@
             android:exported="true"
             android:label="@string/strAnimateCamera"/>
 
+        <activity
+            android:name=".modules.mapTapCoOrdinates.MapTapCoOrdinatesActivity"
+            android:exported="true"
+            android:label="@string/map_co_ordinates"/>
+
     </application>
 
 </manifest>
