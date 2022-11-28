@@ -17,4 +17,6 @@
     <string name="str_choose">Choose</string>
     <string name="str_map_view_3d">Map view 3D</string>
     <string name="str_boundaries">Map Boundaries</string>
+    <string name="strAnimateCamera">Animate Camera</string>
+    <string name="animate_camera">Animate Camera</string>
 </resources>

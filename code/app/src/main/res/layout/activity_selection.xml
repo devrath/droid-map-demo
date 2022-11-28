@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:text="@string/str_boundaries" />
 
+    <Button
+        android:id="@+id/btnMapAnimateCameraId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/animate_camera" />
+
 </LinearLayout>

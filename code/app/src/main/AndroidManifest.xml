@@ -63,6 +63,11 @@
             android:exported="true"
             android:label="@string/str_boundaries"/>
 
+        <activity
+            android:name=".modules.animateCamera.AnimateCameraActivity"
+            android:exported="true"
+            android:label="@string/strAnimateCamera"/>
+
     </application>
 
 </manifest>

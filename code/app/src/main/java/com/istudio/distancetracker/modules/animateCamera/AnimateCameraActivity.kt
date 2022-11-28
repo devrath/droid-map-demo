@@ -1,4 +1,4 @@
-package com.istudio.distancetracker.modules.mapBoundaries
+package com.istudio.distancetracker.modules.animateCamera
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +24,7 @@ import com.istudio.distancetracker.utils.Constants
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class MapBoundariesActivity : AppCompatActivity(), OnMapReadyCallback {
+class AnimateCameraActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -54,7 +54,11 @@ class MapBoundariesActivity : AppCompatActivity(), OnMapReadyCallback {
                 // Set the marker in the map
                 addMarker(MarkerOptions().position(location).title(title))
                 // Set up the boundary
-                moveCamera(CameraUpdateFactory.newLatLngZoom(bounds.center,15f))
+                animateCamera(CameraUpdateFactory.newLatLngZoom(bounds.center,15f), 4000,
+                    object : GoogleMap.CancelableCallback {
+                        override fun onCancel() { Toast.makeText(this@AnimateCameraActivity,"Cancelled",Toast.LENGTH_LONG).show() }
+                        override fun onFinish() { Toast.makeText(this@AnimateCameraActivity,"Completed",Toast.LENGTH_LONG).show() }
+                    })
                 // Set the bounds for camera such that it can't move outside the bounds
                 setLatLngBoundsForCameraTarget(bounds)
             }
