@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.lifecycle.lifecycleScope
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.istudio.distancetracker.R
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
 import com.istudio.distancetracker.utils.Constants
+import kotlinx.coroutines.launch
 
 class MapView3dActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -36,14 +38,16 @@ class MapView3dActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-
-        map.apply {
-            // Add a marker in Sydney and move the camera
-            val location = Constants.disneyLandLocation
-            val title = Constants.disneyLandMarkerStr
-            addMarker(MarkerOptions().position(location).title(title))
-            moveCamera(CameraUpdateFactory.newCameraPosition(setCameraPosition()))
+        lifecycleScope.launch {
+            map.apply {
+                // Add a marker in Sydney and move the camera
+                val location = Constants.disneyLandLocation
+                val title = Constants.disneyLandMarkerStr
+                addMarker(MarkerOptions().position(location).title(title))
+                moveCamera(CameraUpdateFactory.newCameraPosition(setCameraPosition()))
+            }
         }
+
     }
 
     /**

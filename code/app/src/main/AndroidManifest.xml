@@ -58,6 +58,11 @@
             android:exported="true"
             android:label="@string/str_map_view_3d"/>
 
+        <activity
+            android:name=".modules.mapBoundaries.MapBoundariesActivity"
+            android:exported="true"
+            android:label="@string/str_boundaries"/>
+
     </application>
 
 </manifest>

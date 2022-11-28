@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="@string/str_map_view_3d" />
 
+    <Button
+        android:id="@+id/btnMapBoundariesId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_boundaries" />
+
 </LinearLayout>
