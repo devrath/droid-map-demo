@@ -26,24 +26,4 @@ class TypeAndStyle {
         }
     }
 
-    fun setMapType(item: MenuItem, map: GoogleMap){
-        when (item.itemId) {
-            R.id.normal_map -> {
-                map.mapType = GoogleMap.MAP_TYPE_NORMAL
-            }
-            R.id.hybrid_map -> {
-                map.mapType = GoogleMap.MAP_TYPE_HYBRID
-            }
-            R.id.satellite_map -> {
-                map.mapType = GoogleMap.MAP_TYPE_SATELLITE
-            }
-            R.id.terrain_map -> {
-                map.mapType = GoogleMap.MAP_TYPE_TERRAIN
-            }
-            R.id.none_map -> {
-                map.mapType = GoogleMap.MAP_TYPE_NONE
-            }
-        }
-    }
-
 }

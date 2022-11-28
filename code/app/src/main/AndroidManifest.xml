@@ -33,7 +33,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".SelectionActivity"
             android:exported="true"
             android:label="@string/title_activity_maps">
             <intent-filter>
@@ -42,6 +42,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".mapType.MapTypeActivity"
+            android:exported="true"
+            android:label="@string/map_type"/>
+
+        <activity
+            android:name=".mapStyle.MapStyleActivity"
+            android:exported="true"
+            android:label="@string/map_style"/>
+
+
     </application>
 
 </manifest>

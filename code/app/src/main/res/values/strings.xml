@@ -7,4 +7,12 @@
     <string name="satellite">Satellite</string>
     <string name="terrain">Terrain</string>
     <string name="none">None</string>
+    <string name="map_type">Map Type</string>
+    <string name="map_style">Map Style</string>
+    <string name="str_normal">Normal</string>
+    <string name="str_hybrid">Hybrid</string>
+    <string name="str_satellite">Satellite</string>
+    <string name="str_terrain">Terrain</string>
+    <string name="str_none">None</string>
+    <string name="str_choose">Choose</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.istudio.distancetracker
+package com.istudio.distancetracker.mapStyle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,10 +11,11 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.istudio.distancetracker.R
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
 import com.istudio.distancetracker.misc.TypeAndStyle
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapStyleActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -34,7 +35,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Remember to trigger this from the main thread
         mapFragment.getMapAsync(this)
     }
-
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
