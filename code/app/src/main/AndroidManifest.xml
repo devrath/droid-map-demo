@@ -83,6 +83,17 @@
             android:exported="true"
             android:label="@string/polyline_setup_demo"/>
 
+        <activity
+            android:name=".modules.mapPolygon.MapPolygonActivity"
+            android:exported="true"
+            android:label="@string/map_polygon_demo"/>
+
+        <activity
+            android:name=".modules.mapCircle.MapCircleActivity"
+            android:exported="true"
+            android:label="@string/map_circle_demo"/>
+
+
     </application>
 
 </manifest>

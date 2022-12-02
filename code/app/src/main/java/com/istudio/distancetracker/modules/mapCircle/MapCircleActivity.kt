@@ -1,12 +1,8 @@
-package com.istudio.distancetracker.modules.mapPolyline
+package com.istudio.distancetracker.modules.mapCircle
 
-import android.content.Context
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 
@@ -16,7 +12,6 @@ import com.google.android.gms.maps.GoogleMap.OnPolylineClickListener
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
@@ -25,9 +20,8 @@ import com.istudio.distancetracker.databinding.ActivityMapsBinding
 import com.istudio.distancetracker.utils.Constants
 import com.istudio.distancetracker.utils.Constants.polyPointsOfDisney
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
-class MapPolyLineActivity : AppCompatActivity(), OnMapReadyCallback, OnPolylineClickListener {
+class MapCircleActivity : AppCompatActivity(), OnMapReadyCallback, OnPolylineClickListener {
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -89,6 +83,6 @@ class MapPolyLineActivity : AppCompatActivity(), OnMapReadyCallback, OnPolylineC
     }
 
     override fun onPolylineClick(p0: Polyline) {
-        Toast.makeText(this@MapPolyLineActivity,"Click Action!",Toast.LENGTH_LONG).show()
+        Toast.makeText(this@MapCircleActivity,"Click Action!",Toast.LENGTH_LONG).show()
     }
 }

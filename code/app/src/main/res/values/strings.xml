@@ -28,4 +28,6 @@
     <string name="custom_marker">Custom Marker</string>
     <string name="custom_layout_marker">Custom Layout Marker</string>
     <string name="polyline_setup_demo">Polyline setup demo</string>
+    <string name="map_polygon_demo">Map Polygon Demo</string>
+    <string name="map_circle_demo">Map Circle Demo</string>
 </resources>

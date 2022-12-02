@@ -6,7 +6,9 @@ import com.istudio.distancetracker.databinding.ActivityMapsBinding
 import com.istudio.distancetracker.databinding.ActivitySelectionBinding
 import com.istudio.distancetracker.modules.animateCamera.AnimateCameraActivity
 import com.istudio.distancetracker.modules.mapBoundaries.MapBoundariesActivity
+import com.istudio.distancetracker.modules.mapCircle.MapCircleActivity
 import com.istudio.distancetracker.modules.mapMarkers.MapMarkersActivity
+import com.istudio.distancetracker.modules.mapPolygon.MapPolygonActivity
 import com.istudio.distancetracker.modules.mapPolyline.MapPolyLineActivity
 import com.istudio.distancetracker.modules.mapStyle.MapStyleActivity
 import com.istudio.distancetracker.modules.mapTapCoOrdinates.MapTapCoOrdinatesActivity
@@ -34,5 +36,7 @@ class SelectionActivity : AppCompatActivity() {
         binding.btnMapTapCoOrdinatesId.setOnClickListener { openActivity(MapTapCoOrdinatesActivity::class.java) }
         binding.btnMapMarkersId.setOnClickListener { openActivity(MapMarkersActivity::class.java) }
         binding.btnPolyLineDemoId.setOnClickListener { openActivity(MapPolyLineActivity::class.java) }
+        binding.btnPolygonDemoId.setOnClickListener { openActivity(MapPolygonActivity::class.java) }
+        binding.btnPolyCircleDemoId.setOnClickListener { openActivity(MapCircleActivity::class.java) }
     }
 }
