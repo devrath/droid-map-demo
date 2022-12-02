@@ -1,10 +1,14 @@
 package com.istudio.distancetracker.modules.mapMarkers
 
 import android.app.Dialog
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -12,20 +16,31 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.lifecycle.lifecycleScope
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.snackbar.Snackbar
 import com.istudio.distancetracker.R
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
+import com.istudio.distancetracker.misc.CustomInfoAdapter
 import com.istudio.distancetracker.utils.Constants
+import com.istudio.distancetracker.utils.Constants.disneyLandLocation
 import kotlinx.coroutines.launch
 
-class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapMarkersActivity : AppCompatActivity(),
+    OnMapReadyCallback,
+    GoogleMap.OnMarkerClickListener,
+    GoogleMap.OnMarkerDragListener
+{
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -55,6 +70,7 @@ class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
+    // <---------------------------------> Map Ready Listener <------------------------------------>
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
 
@@ -65,18 +81,46 @@ class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
                 val bounds = Constants.disneyBoundsLocation
                 val title = Constants.disneyLandMarkerStr
                 // Set the marker in the map
-                map.addMarker(MarkerOptions().position(location).title(title))?.apply { markerPosition = this }
+                map.addMarker(MarkerOptions().position(location).title(title))?.apply {
+                    // Set the position of marker in a variable so that we can delete it later
+                    markerPosition = this
+                    // We can set this tag and get them on click of map marker
+                    tag = "Marker is Clicked !!"
+                }
                 // Set up the boundary
-                animateCamera(CameraUpdateFactory.newLatLngZoom(bounds.center,15f), 4000,
-                    object : GoogleMap.CancelableCallback {
-                        override fun onCancel() { Toast.makeText(this@MapMarkersActivity,"Cancelled",Toast.LENGTH_LONG).show() }
-                        override fun onFinish() { Toast.makeText(this@MapMarkersActivity,"Map Loaded",Toast.LENGTH_LONG).show() }
-                    })
+                animateCamera(CameraUpdateFactory.newLatLngZoom(disneyLandLocation,17f), null)
                 // Set the bounds for camera such that it can't move outside the bounds
                 setLatLngBoundsForCameraTarget(bounds)
             }
         }
     }
+    // <---------------------------------> Map Ready Listener <------------------------------------>
+
+    // <---------------------------------> Marker Click Listener <--------------------------------->
+    override fun onMarkerClick(marker: Marker): Boolean {
+        if(marker!=null){
+            Toast.makeText(this@MapMarkersActivity,marker.tag.toString(),Toast.LENGTH_LONG).show()
+        }
+        return true
+    }
+    // <---------------------------------> Marker Click Listener <--------------------------------->
+
+    // <---------------------------------> Marker Drag Listeners <--------------------------------->
+    override fun onMarkerDrag(marker: Marker) {
+        val message = marker.position.toString().plus("<-->").plus("Dragging in progress")
+        Log.d("MarkerMovement",message)
+    }
+
+    override fun onMarkerDragEnd(marker: Marker) {
+        val message = marker.position.toString().plus("<-->").plus("Dragging has ended")
+        Log.d("MarkerMovement",message)
+    }
+
+    override fun onMarkerDragStart(marker: Marker) {
+        val message = marker.position.toString().plus("<-->").plus("Dragging has started")
+        Log.d("MarkerMovement",message)
+    }
+    // <---------------------------------> Marker Drag Listeners <--------------------------------->
 
     private fun showDialog() {
         val dialog = Dialog(this).apply {
@@ -84,16 +128,16 @@ class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
             setContentView(R.layout.bottom_sheet_map_type)
         }
         val deleteMarker: LinearLayout = dialog.findViewById(R.id.layoutOne)
-        val mapHybrid: LinearLayout = dialog.findViewById(R.id.layoutTwo)
-        val mapSatellite: LinearLayout = dialog.findViewById(R.id.layoutThree)
-        val mapTerrain: LinearLayout = dialog.findViewById(R.id.layoutFour)
-        val mapNone: LinearLayout = dialog.findViewById(R.id.layoutFive)
+        val markerClick: LinearLayout = dialog.findViewById(R.id.layoutTwo)
+        val markerDraggable: LinearLayout = dialog.findViewById(R.id.layoutThree)
+        val customMarker: LinearLayout = dialog.findViewById(R.id.layoutFour)
+        val customLayoutMarker: LinearLayout = dialog.findViewById(R.id.layoutFive)
 
         deleteMarker.setOnClickListener { initDeleteMarker(dialog) }
-        /*mapHybrid.setOnClickListener { setType(GoogleMap.MAP_TYPE_HYBRID,dialog) }
-        mapSatellite.setOnClickListener { setType(GoogleMap.MAP_TYPE_SATELLITE,dialog) }
-        mapTerrain.setOnClickListener { setType(GoogleMap.MAP_TYPE_TERRAIN,dialog) }
-        mapNone.setOnClickListener { setType(GoogleMap.MAP_TYPE_NONE,dialog) }*/
+        markerClick.setOnClickListener { initMarkerClickInfo(dialog) }
+        markerDraggable.setOnClickListener { initDraggableMarker(dialog) }
+        customMarker.setOnClickListener { initIconForMarker(dialog) }
+        customLayoutMarker.setOnClickListener { initCustomLayoutMarker(dialog) }
 
         dialog.show()
         dialog.window?.apply {
@@ -104,10 +148,73 @@ class MapMarkersActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    private fun initCustomLayoutMarker(dialog: Dialog) {
+        dialog.dismiss()
+        val layoutMarker = Constants.layoutMarkerLocation
+        map.addMarker(
+            MarkerOptions()
+                .position(layoutMarker)
+                .title("Title")
+                .snippet("Description")
+        )
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(layoutMarker,17f))
+        map.setInfoWindowAdapter(CustomInfoAdapter(this))
+    }
+
+    private fun initIconForMarker(dialog: Dialog) {
+        dialog.dismiss()
+        val customMarker = Constants.customMarkerLocation
+        map.addMarker(
+            MarkerOptions()
+                .position(customMarker)
+                .title("Custom Marker")
+                .icon(fromVectorToBitmap(R.drawable.ic_seletion,Color.parseColor("#000000")))
+        )
+    }
+
+    private fun initDraggableMarker(dialog: Dialog) {
+        dialog.dismiss()
+        val draggableMarker = Constants.draggableMarkerLocation
+
+        map.addMarker(MarkerOptions().position(draggableMarker).title("Draggable marker"))?.apply {
+            isDraggable = true
+            // Drag listener for marker
+            map.setOnMarkerDragListener(this@MapMarkersActivity)
+        }
+    }
+
+    private fun initMarkerClickInfo(dialog: Dialog) {
+        dialog.dismiss()
+        // Set marker listener
+        map.setOnMarkerClickListener(this@MapMarkersActivity)
+        Snackbar.make(binding.root, "Click the marker for demo", Snackbar.LENGTH_SHORT).show();
+    }
+
     private fun initDeleteMarker(dialog: Dialog) {
         if(::markerPosition.isInitialized){
             dialog.dismiss()
             markerPosition.remove();
         }
+    }
+
+    /**
+     * Convert a vector drawable into a bitmap descriptor
+     */
+    private fun fromVectorToBitmap(id: Int, color: Int): BitmapDescriptor {
+        val vectorDrawable: Drawable? = ResourcesCompat.getDrawable(resources, id, null)
+        if(vectorDrawable == null){
+            Log.d("MapsActivity", "Resource not found.")
+            return BitmapDescriptorFactory.defaultMarker()
+        }
+        val bitmap = Bitmap.createBitmap(
+            vectorDrawable.intrinsicWidth,
+            vectorDrawable.intrinsicHeight,
+            Bitmap.Config.ARGB_8888
+        )
+        val canvas = Canvas(bitmap)
+        vectorDrawable.setBounds(0, 0, canvas.width, canvas.height)
+        DrawableCompat.setTint(vectorDrawable, color)
+        vectorDrawable.draw(canvas)
+        return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 }

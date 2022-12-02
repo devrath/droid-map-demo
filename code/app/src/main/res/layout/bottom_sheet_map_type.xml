@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_filter_one"
-            android:contentDescription="@string/str_normal" />
+            android:contentDescription="@string/delete_marker" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,12 +40,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_filter_two"
-            android:contentDescription="@string/str_hybrid" />
+            android:contentDescription="@string/marker_click" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/str_hybrid"
+            android:text="@string/marker_click"
             android:layout_marginStart="30dp"
             android:textSize="16sp"/>
 
@@ -63,12 +63,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_filter_three"
-            android:contentDescription="@string/str_satellite" />
+            android:contentDescription="@string/draggable_marker" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/str_satellite"
+            android:text="@string/draggable_marker"
             android:layout_marginStart="30dp"
             android:textSize="16sp"/>
 
@@ -86,12 +86,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_filter_four"
-            android:contentDescription="@string/str_terrain" />
+            android:contentDescription="@string/custom_marker" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/str_terrain"
+            android:text="@string/custom_marker"
             android:layout_marginStart="30dp"
             android:textSize="16sp"/>
 
@@ -110,12 +110,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_filter_five"
-            android:contentDescription="@string/str_none" />
+            android:contentDescription="@string/custom_layout_marker" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/str_none"
+            android:text="@string/custom_layout_marker"
             android:layout_marginStart="30dp"
             android:textSize="16sp"/>
 

@@ -23,4 +23,8 @@
     <string name="str_select_demo">Select Demo</string>
     <string name="str_markers_demo">Markers Demo</string>
     <string name="delete_marker">Delete Marker</string>
+    <string name="marker_click">Marker click!</string>
+    <string name="draggable_marker">Draggable Marker</string>
+    <string name="custom_marker">Custom Marker</string>
+    <string name="custom_layout_marker">Custom Layout Marker</string>
 </resources>
