@@ -15,4 +15,14 @@ object Constants {
 
     val disneyBoundsLocation = LatLngBounds(disneyLandLocationBound1, disneyLandLocationBound2)
 
+
+    val polyPointsOfDisney = arrayListOf<LatLng>(
+        disneyLandLocation,
+        LatLng(33.812182619161156, -117.91890451874627),
+        LatLng(33.81210461964178, -117.91882807578864),
+        LatLng(33.81200544872161, -117.91889311935783),
+        LatLng(33.812040548554805, -117.91924247708515)
+    )
+
+
 }
