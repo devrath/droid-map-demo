@@ -125,7 +125,7 @@ class MapMarkersActivity : AppCompatActivity(),
     private fun showDialog() {
         val dialog = Dialog(this).apply {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
-            setContentView(R.layout.bottom_sheet_map_type)
+            setContentView(R.layout.bottom_sheet_markers_demo)
         }
         val deleteMarker: LinearLayout = dialog.findViewById(R.id.layoutOne)
         val markerClick: LinearLayout = dialog.findViewById(R.id.layoutTwo)
