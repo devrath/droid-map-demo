@@ -78,6 +78,11 @@
             android:exported="true"
             android:label="@string/str_markers_demo"/>
 
+        <activity
+            android:name=".modules.mapPolyline.MapPolyLineActivity"
+            android:exported="true"
+            android:label="@string/polyline_setup_demo"/>
+
     </application>
 
 </manifest>

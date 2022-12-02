@@ -49,4 +49,10 @@
         android:layout_height="wrap_content"
         android:text="@string/str_markers_demo" />
 
+    <Button
+        android:id="@+id/btnPolyLineDemoId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/polyline_setup_demo" />
+
 </LinearLayout>
