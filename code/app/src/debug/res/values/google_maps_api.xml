@@ -14,16 +14,19 @@
     ================================================================================================================
     ================================================================================================================
     SHA-1 certificate fingerprint:
-    E1:5A:8B:E2:93:73:ED:58:26:D1:41:F5:2D:32:EE:1A:4D:80:92:71
+    // Add your SHA-1
     ================================================================================================================
 
     ================================================================================================================
-    How to get SHA-1 key: https://stackoverflow.com/a/68728675/1083093
+    How to get SHA-1 key:
+     * Use the command below along with the keystore file to get the  SHA-1 jey
+     * COMMAND➜ keytool -list -v -keystore /Users/devrath/Important/DistanceTracker/keys/Keystore -alias DistanceTrackerAlias
     How to get API key: https://developers.google.com/maps/documentation/android/start#get-key
+     * Place to edit Keys: https://console.cloud.google.com/google/maps-apis/credentials?project=distance-tracker-369716
     ================================================================================================================
 
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDfmPhCthHR24hL98B0z8PZl4ZCc9D0YvI</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">YOUR-KEY</string>
 </resources>
