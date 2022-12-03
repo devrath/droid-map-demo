@@ -12,6 +12,7 @@ import com.google.android.gms.maps.GoogleMap.OnPolylineClickListener
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
@@ -58,21 +59,21 @@ class MapCircleActivity : AppCompatActivity(), OnMapReadyCallback, OnPolylineCli
     }
 
     private fun setUpPolyLineSettings() {
-        val polylineOptions = PolylineOptions().apply {
-            width(5f)
-            color(Color.MAGENTA)
-            geodesic(true)
+        val polylineOptions = CircleOptions().apply {
+            fillColor(Color.TRANSPARENT)
+            strokeColor(Color.BLUE)
             clickable(true)
+            radius(5000.0)
+            center(Constants.disneyLandLocation)
         }
-        val polyLine = map.addPolyline(polylineOptions)
-        polyLine.points = polyPointsOfDisney
+        map.addCircle(polylineOptions)
     }
 
     /**
      * Set the zoom level for the camera
      */
     private fun setCameraPosition(): CameraPosition {
-        val zoomValue = 20f
+        val zoomValue = 12f
         val baringValue = 100f
         val tiltValue = 45f
         return CameraPosition.Builder().apply {
