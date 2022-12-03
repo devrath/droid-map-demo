@@ -2,7 +2,7 @@
 
 You can contribute us by filing issues, bugs and PRs. You can also take a look at active issues and fix them.
 
-If you want to discuss on something then feel free to present your opinions, views or any other relevant comment on [discussions](https://github.com/devrath/droid-pure-kotlin-application/discussions).
+If you want to discuss on something then feel free to present your opinions, views or any other relevant comment on [discussions](https://github.com/devrath/droid-map-demo/discussions).
 
 ### Code contribution
 
@@ -23,4 +23,3 @@ If you want to discuss on something then feel free to present your opinions, vie
 - New code addition/deletion should not break existing flow of a system.
 - All tests should be passed.
 - Verify `./gradlew build` is passing before raising a PR.
-- Reformat code with Spotless `./gradlew spotlessApply` before raising a PR.
