@@ -13,12 +13,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolygonOptions
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
 import com.istudio.distancetracker.R
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
 import com.istudio.distancetracker.utils.Constants
 import com.istudio.distancetracker.utils.Constants.polyPointsOfDisney
+import com.istudio.distancetracker.utils.Constants.polygonPointsOfDisney
 import kotlinx.coroutines.launch
 
 class MapPolygonActivity : AppCompatActivity(), OnMapReadyCallback, OnPolylineClickListener {
@@ -58,14 +60,14 @@ class MapPolygonActivity : AppCompatActivity(), OnMapReadyCallback, OnPolylineCl
     }
 
     private fun setUpPolyLineSettings() {
-        val polylineOptions = PolylineOptions().apply {
-            width(5f)
-            color(Color.MAGENTA)
-            geodesic(true)
+        val polylineOptions = PolygonOptions().apply {
+            add(polygonPointsOfDisney[0],polygonPointsOfDisney[1],polygonPointsOfDisney[2],polygonPointsOfDisney[3])
+            fillColor(Color.BLACK)
+            strokeColor(Color.BLUE)
             clickable(true)
         }
-        val polyLine = map.addPolyline(polylineOptions)
-        polyLine.points = polyPointsOfDisney
+        val polyLine = map.addPolygon(polylineOptions)
+        polyLine.points = polygonPointsOfDisney
     }
 
     /**
