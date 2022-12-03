@@ -13,7 +13,7 @@ Repository contains code along with demo on how to use maps in android
 --- | --- | --- | --- | --- |
 <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/MapType/select.png" width="160" height="300"/> | <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/MapType/1.png" width="160" height="300"/> | <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/MapType/2.png" width="160" height="300"/>| <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/MapType/3.png" width="160" height="300"/>| <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/MapType/4.png" width="160" height="300"/>|
 ### **`Other map features like 3D-view of  buildings,`**
-`3D Building view` | `Setting up boundaries in map` | `Animate camera` | `Map Marker Actions` |
+`3D Building view` | `Setting up boundaries` | `Animate camera` | `Map Marker Actions` |
 --- | --- | --- | --- |
 <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/3d/3D.png" width="160" height="300"/> | <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/boundaries/boundaries.gif" width="160" height="300"/> | <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/animateCamera/animate_camera.gif" width="160" height="300"/>| <img src="https://github.com/devrath/droid-map-demo/blob/main/assets/demos/markerAction/marker_action.gif" width="160" height="300"/>|
 ### **`Some of the ways of drawing polyline and marker click`**
