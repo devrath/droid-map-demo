@@ -30,4 +30,5 @@
     <string name="polyline_setup_demo">Polyline setup demo</string>
     <string name="map_polygon_demo">Map Polygon Demo</string>
     <string name="map_circle_demo">Map Circle Demo</string>
+    <string name="custom_polyline_demo">Custom polyline demo</string>
 </resources>

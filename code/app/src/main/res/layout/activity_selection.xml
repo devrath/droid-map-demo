@@ -67,4 +67,10 @@
         android:layout_height="wrap_content"
         android:text="@string/map_circle_demo" />
 
+    <Button
+        android:id="@+id/btnCustomPolylineDemoId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/custom_polyline_demo" />
+
 </LinearLayout>

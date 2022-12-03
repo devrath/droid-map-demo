@@ -93,6 +93,10 @@
             android:exported="true"
             android:label="@string/map_circle_demo"/>
 
+        <activity
+            android:name=".modules.mapCustomPolyline.MapCustomPolylineActivity"
+            android:exported="true"
+            android:label="@string/custom_polyline_demo"/>
 
     </application>
 
