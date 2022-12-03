@@ -5,7 +5,17 @@
 ## **`𝙸𝚗𝚝𝚛𝚘𝚍𝚞𝚌𝚝𝚒𝚘𝚗`** 💡
 Repository contains code along with demo on how to use maps in android 
 
-
+## 𝙷𝚘𝚠 𝚝𝚘 𝚛𝚞𝚗 𝚝𝚑𝚎 𝚜𝚊𝚖𝚙𝚕𝚎 𝚊𝚙𝚙𝚕𝚒𝚌𝚊𝚝𝚒𝚘𝚗 👣
+🏷️ Step-1: `Get the SHA-1 certificate fingerprint from your system`
+```java
+ How to get SHA-1 key:
+     * Use this link: https://stackoverflow.com/a/73687558/1083093
+```
+🏷️ Step-2: `Get the Google aps Api key by creating a project in google console`
+```java
+ How to get API key: https://developers.google.com/maps/documentation/android/start#get-key
+     * Place to edit Keys: https://console.cloud.google.com/google/maps-apis/credentials?project=<PROJECT_NAME>-<PROJECT_ID>
+```
 
 
 ### **`Different Map Types`**
