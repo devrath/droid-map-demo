@@ -31,7 +31,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.istudio.distancetracker.R
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
-import com.istudio.distancetracker.misc.CustomInfoAdapter
+import com.istudio.distancetracker.adapter.CustomInfoAdapter
 import com.istudio.distancetracker.utils.Constants
 import com.istudio.distancetracker.utils.Constants.disneyLandLocation
 import kotlinx.coroutines.launch

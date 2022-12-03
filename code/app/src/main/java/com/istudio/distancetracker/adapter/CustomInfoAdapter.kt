@@ -1,4 +1,4 @@
-package com.istudio.distancetracker.misc
+package com.istudio.distancetracker.adapter
 
 import android.app.Activity
 import android.content.Context

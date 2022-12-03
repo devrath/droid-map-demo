@@ -7,18 +7,15 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import com.istudio.distancetracker.R
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
-import com.istudio.distancetracker.misc.TypeAndStyle
 import com.istudio.distancetracker.utils.Constants
 import java.lang.Exception
 

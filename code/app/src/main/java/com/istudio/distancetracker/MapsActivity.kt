@@ -12,15 +12,11 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.istudio.distancetracker.databinding.ActivityMapsBinding
-import com.istudio.distancetracker.misc.TypeAndStyle
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-
-    private val typeAndStyle by lazy { TypeAndStyle() }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
